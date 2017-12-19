@@ -1,0 +1,17 @@
+DateCalendar = 
+ADDCOLUMNS ( 
+  CALENDAR (MINX ('All Fact Table Dates', [d1_MeetingDate_id]), MAXX ('All Fact Table Dates', [d1_MeetingDate_id].[Date]))
+, "DateAsInteger", FORMAT ( [Date], "YYYYMMDD" )
+, "Year", YEAR ( [Date] )
+, "MonthNo", FORMAT ( [Date], "MM" )
+, "YearMonthNo", FORMAT ( [Date], "YYYY-MM" )
+, "YearMonth", FORMAT ( [Date], "YYYY-mmm" )
+, "MonthShort", FORMAT ( [Date], "mmm" )
+, "MonthLong", FORMAT ( [Date], "mmmm" )
+, "WeekNo", WEEKDAY ( [Date] )
+, "WeekDay", FORMAT ( [Date], "dddd" )
+, "WeekDayShort", FORMAT ( [Date], "dddd" )
+, "Quarter", "Q" & FORMAT ( [Date], "Q" )
+, "YearQuarter", FORMAT ( [Date], "YYYY" ) & "-Q" & FORMAT ( [Date], "Q" ) 
+,"WkNumbYear" , WEEKNUM([Date], 1)
+)
