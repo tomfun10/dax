@@ -1,4 +1,5 @@
-DateCalendar = 
+EVALUATE
+
 ADDCOLUMNS ( 
   CALENDAR (MINX ('All Fact Table Dates', [d1_MeetingDate_id]), MAXX ('All Fact Table Dates', [d1_MeetingDate_id].[Date]))
 , "DateAsInteger", FORMAT ( [Date], "YYYYMMDD" )
@@ -10,8 +11,8 @@ ADDCOLUMNS (
 , "MonthLong", FORMAT ( [Date], "mmmm" )
 , "WeekNo", WEEKDAY ( [Date] )
 , "WeekDay", FORMAT ( [Date], "dddd" )
-, "WeekDayShort", FORMAT ( [Date], "dddd" )
+, "WeekDayShort", FORMAT ( [Date], "ddd" )
 , "Quarter", "Q" & FORMAT ( [Date], "Q" )
 , "YearQuarter", FORMAT ( [Date], "YYYY" ) & "-Q" & FORMAT ( [Date], "Q" ) 
-,"WkNumbYear" , WEEKNUM([Date], 1)
+, "WkNumbYear" , WEEKNUM([Date], 1)
 )
